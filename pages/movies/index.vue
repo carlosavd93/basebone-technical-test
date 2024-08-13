@@ -17,14 +17,23 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref, onBeforeUnmount } from "vue";
 import type { PosterInfo } from "../../types/PosterInfo";
 
 const movieToQuery = ref<string>("");
 const moviesQueryResult = ref<PosterInfo[]>([]);
 const loading = ref<boolean>(false);
 
+const moviesStore = useMoviesStore();
 const { getShowsInfoByName } = useApiUtils();
+
+onMounted(async () => {
+  if (moviesStore.lastSearchedMovies) {
+    loading.value = true;
+    moviesQueryResult.value = moviesStore.lastSearchedMovies;
+    loading.value = false;
+  }
+});
 
 const queryMovie = async (movie: string) => {
   movieToQuery.value = movie;
@@ -32,6 +41,12 @@ const queryMovie = async (movie: string) => {
   moviesQueryResult.value = await getShowsInfoByName(movie, "movie");
   loading.value = false;
 };
+
+onBeforeUnmount(() => {
+  if (moviesQueryResult.value) {
+    moviesStore.setLastSearchedMovies(moviesQueryResult.value);
+  }
+});
 </script>
 
 <style scoped>

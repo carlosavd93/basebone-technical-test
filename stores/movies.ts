@@ -1,11 +1,16 @@
 import { defineStore } from "pinia";
+import type { PosterInfo } from "../types/PosterInfo";
 
 export const useMoviesStore = defineStore({
   id: "movies-store",
   state: () => {
     return {
-      featuredMovies: {},
-      movies: {},
+      lastSearchedMovies: [] as PosterInfo[],
     };
+  },
+  actions: {
+    setLastSearchedMovies(movies: PosterInfo[]) {
+      this.lastSearchedMovies = movies;
+    },
   },
 });
