@@ -1,14 +1,15 @@
 <template>
   <div>
-    <SearchInput :showType="'serie'" @queryShow="queryMovie"></SearchInput>
+    <SearchInput :showType="'serie'" @queryShow="querySerie"></SearchInput>
     <div v-if="loading">Loading...</div>
     <div v-else>
-      <h1>Results for {{ movieToQuery }}</h1>
+      <h1>Results for {{ serieToQuery }}</h1>
       <div class="grid">
         <PosterCard
           v-for="serie in seriesQueryResult"
           :key="serie.imdbID"
           :posterInfo="serie"
+          :showType="'series'"
         />
       </div>
     </div>
@@ -18,16 +19,17 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { PosterInfo } from "../../types/PosterInfo";
-import getShowsInfo from "../../api/getShowsInfo";
 
 const serieToQuery = ref<string>("");
 const seriesQueryResult = ref<PosterInfo[]>([]);
 const loading = ref<boolean>(false);
 
-const queryMovie = async (serie: string) => {
+const { getShowsInfoByName } = useApiUtils();
+
+const querySerie = async (serie: string) => {
   serieToQuery.value = serie;
   loading.value = true;
-  seriesQueryResult.value = await getShowsInfo(serie);
+  seriesQueryResult.value = await getShowsInfoByName(serie, "series");
   loading.value = false;
 };
 </script>

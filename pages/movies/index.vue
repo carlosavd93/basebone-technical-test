@@ -9,6 +9,7 @@
           v-for="movie in moviesQueryResult"
           :key="movie.imdbID"
           :posterInfo="movie"
+          :showType="'movies'"
         />
       </div>
     </div>
@@ -18,16 +19,17 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { PosterInfo } from "../../types/PosterInfo";
-import getShowsInfo from "../../api/getShowsInfo";
 
 const movieToQuery = ref<string>("");
 const moviesQueryResult = ref<PosterInfo[]>([]);
 const loading = ref<boolean>(false);
 
+const { getShowsInfoByName } = useApiUtils();
+
 const queryMovie = async (movie: string) => {
   movieToQuery.value = movie;
   loading.value = true;
-  moviesQueryResult.value = await getShowsInfo(movie);
+  moviesQueryResult.value = await getShowsInfoByName(movie, "movie");
   loading.value = false;
 };
 </script>

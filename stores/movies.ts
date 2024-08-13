@@ -1,13 +1,11 @@
 import { defineStore } from "pinia";
 
-export const useShowsStore = defineStore({
-  id: "shows-store",
+export const useMoviesStore = defineStore({
+  id: "movies-store",
   state: () => {
     return {
       featuredMovies: {},
-      featuredSeries: {},
       movies: {},
-      series: {},
     };
   },
 });

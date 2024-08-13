@@ -2,18 +2,14 @@ import { resolve } from "path";
 import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
-  modules: [["@pinia/nuxt", { autoImports: ["defineStore"] }]],
+  modules: [
+    ["@pinia/nuxt", { autoImports: ["defineStore"] }],
+    "@nuxtjs/tailwindcss",
+  ],
   alias: {
     "@": resolve(__dirname, "/"),
   },
-  css: ["~/assets/main.scss"],
   devtools: { enabled: true },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
   imports: {
     dirs: ["stores"],
   },

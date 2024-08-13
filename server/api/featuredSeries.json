@@ -1,0 +1,22 @@
+[
+  {
+    "Title": "Lost",
+    "imdbID": "tt0411008",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNzhlY2E5NDUtYjJjYy00ODg3LWFkZWQtYTVmMzU4ZWZmOWJkXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
+  },
+  {
+    "Title": "Breaking Bad",
+    "imdbID": "tt0903747",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_SX300.jpg"
+  },
+  {
+    "Title": "Mindhunter",
+    "imdbID": "tt5290382",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BNWNmYzQ1ZWUtYTQ3ZS00Y2UwLTlkMDctZThlOTJkMGJiNzBiXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SX300.jpg"
+  },
+  {
+    "Title": "Battlestar Galactica",
+    "imdbID": "tt0314979",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BZjJlYzgzOWUtZmJlZi00ZGM4LTliNzctNWFkNThlMDJhZDQxXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg"
+  }
+]
