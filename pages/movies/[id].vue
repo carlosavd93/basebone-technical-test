@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-gray-100 py-8">
-    <div v-if="loading">Loading...</div>
+  <div class="flex flex-col bg-movie-gray py-8">
+    <div v-if="loading" class="self-center text-2xl mt-8">Loading...</div>
     <div v-else class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row -mx-4">
         <div class="md:flex-1 px-4">

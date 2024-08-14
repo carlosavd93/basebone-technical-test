@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center">
-    <div class="max-w-screen-xl">
-      <div v-if="loading">Loading...</div>
+    <div class="flex max-w-screen-xl">
+      <div v-if="loading" class="self-center text-2xl mt-8">Loading...</div>
       <div v-else>
         <p class="text-4xl mt-10 mb-5 ml-5 font-bold">Trending Movies</p>
         <div class="flex mx-2 justify-center">
@@ -37,11 +37,11 @@ const featuredSeries = ref<PosterInfo[]>([]);
 const loading = ref<boolean>(true);
 
 onMounted(async () => {
-  const response = await $fetch("/api/featuredMovies");
-  featuredMovies.value = response.api;
+  const moviesResponse = await $fetch("/api/featuredMovies");
+  featuredMovies.value = moviesResponse.data;
 
-  const response2 = await $fetch("/api/featuredSeries");
-  featuredSeries.value = response2.api;
+  const seriesResponse = await $fetch("/api/featuredSeries");
+  featuredSeries.value = seriesResponse.data;
 
   loading.value = false;
 });

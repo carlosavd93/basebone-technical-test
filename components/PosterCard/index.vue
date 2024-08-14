@@ -38,9 +38,3 @@ const saveShowToStorage = (title: string) => {
   }
 };
 </script>
-
-<style scoped>
-.card {
-  width: 200px;
-}
-</style>

@@ -56,5 +56,3 @@ const handleBlur = async () => {
   await validate();
 };
 </script>
-
-<style scoped></style>

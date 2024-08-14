@@ -68,11 +68,3 @@ onBeforeUnmount(() => {
   }
 });
 </script>
-
-<style scoped>
-.grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-</style>
