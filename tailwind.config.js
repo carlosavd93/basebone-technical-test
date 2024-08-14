@@ -10,9 +10,9 @@ export default {
   ],
   theme: {
     colors: {
-      "movie-black": "#D8EFD3",
-      "movie-grey": "#95D2B3",
-      "movie-blue": "#55AD9B",
+      "movie-black": "#0D3FA9",
+      "movie-grey": "#FFA900",
+      "movie-blue": "#3d65ba",
       "movie-white": "#F1F8E8",
     },
     extend: {},

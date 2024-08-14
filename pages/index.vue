@@ -1,25 +1,28 @@
 <template>
-  <div>
-    <h1>Featured Movies and Series</h1>
-    <div v-if="loading">Loading...</div>
-    <div v-else>
-      <h2>Featured Movies</h2>
-      <div class="grid">
-        <PosterCard
-          v-for="movie in featuredMovies"
-          :key="movie.imdbID"
-          :posterInfo="movie"
-          :showType="'movies'"
-        />
-      </div>
-      <h2>Featured Series</h2>
-      <div class="grid">
-        <PosterCard
-          v-for="series in featuredSeries"
-          :key="series.imdbID"
-          :posterInfo="series"
-          :showType="'series'"
-        />
+  <div class="flex justify-center">
+    <div class="max-w-screen-xl">
+      <div v-if="loading">Loading...</div>
+      <div v-else>
+        <p class="text-4xl mt-10 mb-5 ml-5 font-bold">Trending Movies</p>
+        <div class="flex mx-2 justify-center">
+          <div
+            class="w-1/4 px-4"
+            v-for="movie in featuredMovies"
+            :key="movie.imdbID"
+          >
+            <PosterCard :posterInfo="movie" :showType="'movies'" />
+          </div>
+        </div>
+        <p class="text-4xl mt-10 mb-5 ml-5 font-bold">Trending Series</p>
+        <div class="flex mx-2">
+          <div
+            class="w-1/4 px-2"
+            v-for="series in featuredSeries"
+            :key="series.imdbID"
+          >
+            <PosterCard :posterInfo="series" :showType="'series'" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -43,11 +46,3 @@ onMounted(async () => {
   loading.value = false;
 });
 </script>
-
-<style scoped>
-.grid {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-</style>

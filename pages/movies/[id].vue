@@ -6,7 +6,7 @@
         <div class="md:flex-1 px-4">
           <div class="rounded-lg bg-gray-300 mb-4">
             <img
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover max-w-3xl"
               :src="showInfo.Poster"
               :alt="showInfo.Title"
             />
@@ -109,7 +109,6 @@ const { getShowInfoById } = useApiUtils();
 
 onMounted(async () => {
   const response = await getShowInfoById(route.params.id);
-  console.log(response);
   showInfo.value = response;
   loading.value = false;
 });

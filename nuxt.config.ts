@@ -4,6 +4,7 @@ import { defineNuxtConfig } from "nuxt/config";
 export default defineNuxtConfig({
   modules: [
     ["@pinia/nuxt", { autoImports: ["defineStore"] }],
+    ["@vee-validate/nuxt", { autoImports: true }],
     "@nuxtjs/tailwindcss",
   ],
   alias: {

@@ -109,7 +109,6 @@ const { getShowInfoById } = useApiUtils();
 
 onMounted(async () => {
   const response = await getShowInfoById(route.params.id);
-  console.log(response);
   showInfo.value = response;
   loading.value = false;
 });
